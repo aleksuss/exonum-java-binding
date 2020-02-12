@@ -13,7 +13,7 @@
 // limitations under the License.
 
 use exonum::crypto::Hash;
-use exonum_merkledb::IndexAddress;
+use exonum::merkledb::IndexAddress;
 use exonum_proto::ProtobufConvert;
 use jni::objects::JString;
 use jni::sys::{jbyteArray, jobjectArray};
@@ -22,7 +22,7 @@ use protobuf::Message;
 
 use std::ptr;
 
-use JniResult;
+use crate::JniResult;
 
 /// Converts Java byte array to `Hash`. Panics if array has the wrong length.
 pub fn convert_to_hash(env: &JNIEnv, array: jbyteArray) -> JniResult<Hash> {

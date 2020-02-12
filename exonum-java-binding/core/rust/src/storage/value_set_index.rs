@@ -14,7 +14,7 @@
 
 use std::{panic, ptr};
 
-use exonum_merkledb::{
+use exonum::merkledb::{
     access::AccessExt,
     generic::{ErasedAccess, GenericRawAccess},
     indexes::{Entries as IndexIter, Keys},
@@ -27,9 +27,12 @@ use jni::{
 };
 
 use exonum_crypto::Hash;
-use handle::{self, Handle};
-use storage::{PairIter, Value};
-use utils;
+
+use crate::{
+    handle::{self, Handle},
+    storage::{PairIter, Value},
+    utils,
+};
 
 type Index = ValueSetIndex<GenericRawAccess<'static>, Value>;
 

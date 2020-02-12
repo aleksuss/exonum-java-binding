@@ -14,7 +14,7 @@
 
 use std::{panic, ptr};
 
-use exonum_merkledb::{
+use exonum::merkledb::{
     access::AccessExt,
     generic::{ErasedAccess, GenericRawAccess},
     indexes::Values as Iter,
@@ -26,9 +26,11 @@ use jni::{
     JNIEnv,
 };
 
-use handle::{self, Handle};
-use storage::Value;
-use utils;
+use crate::{
+    handle::{self, Handle},
+    storage::Value,
+    utils,
+};
 
 type Index = ListIndex<GenericRawAccess<'static>, Value>;
 

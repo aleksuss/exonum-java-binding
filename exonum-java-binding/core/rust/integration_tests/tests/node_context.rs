@@ -35,7 +35,7 @@ use java_bindings::{
         messages::Verified,
         runtime::{AnyTx, CallInfo},
     },
-    exonum_merkledb::TemporaryDB,
+    exonum::merkledb::TemporaryDB,
     jni::JavaVM,
     Executor, Node,
 };

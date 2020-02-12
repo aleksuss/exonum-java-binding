@@ -12,15 +12,15 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+use exonum::merkledb::{
+    access::{Access, AccessError},
+    generic::{ErasedAccess, GenericAccess, GenericRawAccess},
+    Fork, IndexAddress,
+};
 use exonum::{
     blockchain::{BlockProof, IndexProof, Schema},
     helpers::Height,
     runtime::SnapshotExt,
-};
-use exonum_merkledb::{
-    access::{Access, AccessError},
-    generic::{ErasedAccess, GenericAccess, GenericRawAccess},
-    Fork, IndexAddress,
 };
 use jni::{
     objects::JClass,
@@ -30,8 +30,10 @@ use jni::{
 
 use std::{num::NonZeroU64, panic, rc::Rc};
 
-use handle::{self, Handle};
-use utils;
+use crate::{
+    handle::{self, Handle},
+    utils,
+};
 
 /// Prolongs lifetime of the GenericRawAccess.
 ///
@@ -224,7 +226,7 @@ pub extern "system" fn Java_com_exonum_binding_core_storage_database_Accesses_na
 
 #[cfg(test)]
 mod tests {
-    use exonum_merkledb::{
+    use exonum::merkledb::{
         access::{Access, AccessExt},
         generic::ErasedAccess,
         Database, Entry, TemporaryDB,

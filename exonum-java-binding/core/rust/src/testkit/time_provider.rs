@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
+use crate::utils::unwrap_jni;
 use chrono::{DateTime, Utc};
-use exonum_merkledb::BinaryValue;
+use exonum::merkledb::BinaryValue;
 use exonum_time::TimeProvider;
 use jni::{
     objects::{GlobalRef, JObject},
     Executor, JNIEnv,
 };
-use utils::unwrap_jni;
 
 /// Wrapper around Java interface TimeProvider.
 pub struct JavaTimeProvider {

@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-use exonum_merkledb::{Database, Patch, TemporaryDB};
+use exonum::merkledb::{Database, Patch, TemporaryDB};
 use jni::{
     objects::{JClass, JObject},
     JNIEnv,
@@ -20,9 +20,11 @@ use jni::{
 
 use std::panic;
 
-use handle::{self, Handle};
-use storage::into_erased_access;
-use utils;
+use crate::{
+    handle::{self, Handle},
+    storage::into_erased_access,
+    utils,
+};
 
 /// Returns pointer to created `TemporaryDB` object.
 #[no_mangle]

@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-use exonum_merkledb::{
+use exonum::merkledb::{
     access::Prefixed,
     generic::{ErasedAccess, GenericAccess},
 };
@@ -23,7 +23,7 @@ use jni::{
 
 use std::panic;
 
-use {
+use crate::{
     handle,
     utils::{convert_to_string, unwrap_exc_or_default},
     Handle,

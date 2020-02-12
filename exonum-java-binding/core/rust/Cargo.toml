@@ -2,6 +2,7 @@
 name = "java_bindings"
 version = "0.10.0-SNAPSHOT"
 authors = ["Exonum Team <contact@exonum.com>"]
+edition = "2018"
 
 [workspace]
 members = ["integration_tests", "exonum-java"]

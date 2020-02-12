@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-use exonum_merkledb::{
+use exonum::merkledb::{
     generic::{ErasedAccess, GenericAccess},
     AsReadonly,
 };
@@ -20,7 +20,7 @@ use jni::{objects::JClass, JNIEnv};
 
 use std::panic;
 
-use {handle, into_erased_access, utils::unwrap_exc_or_default, Handle};
+use crate::{handle, into_erased_access, utils::unwrap_exc_or_default, Handle};
 
 /// Creates a readonly access from the base access (passed as `access_handle`).
 ///

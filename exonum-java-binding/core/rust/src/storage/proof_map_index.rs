@@ -14,7 +14,7 @@
 
 use std::{panic, ptr};
 
-use exonum_merkledb::{
+use exonum::merkledb::{
     access::AccessExt,
     generic::{ErasedAccess, GenericRawAccess},
     indexes::{proof_map::PROOF_MAP_KEY_SIZE, Entries as IndexIter, Keys, Values},
@@ -27,11 +27,12 @@ use jni::{
     JNIEnv,
 };
 use protobuf::Message;
-use JniResult;
 
-use handle::{self, Handle};
-use storage::{Key, PairIter, Value};
-use utils;
+use crate::{
+    handle::{self, Handle},
+    storage::{Key, PairIter, Value},
+    utils, JniResult,
+};
 
 type RawKey = [u8; PROOF_MAP_KEY_SIZE];
 

@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-use exonum_merkledb::{
+use exonum::merkledb::{
     access::AccessExt,
     generic::{ErasedAccess, GenericRawAccess},
     ObjectHash, ProofEntry,
@@ -25,9 +25,11 @@ use jni::{
 
 use std::{panic, ptr};
 
-use handle::{self, Handle};
-use storage::Value;
-use utils;
+use crate::{
+    handle::{self, Handle},
+    storage::Value,
+    utils,
+};
 
 type Index = ProofEntry<GenericRawAccess<'static>, Value>;
 

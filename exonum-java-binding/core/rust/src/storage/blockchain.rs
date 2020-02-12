@@ -1,4 +1,4 @@
-use exonum_merkledb::generic::ErasedAccess;
+use exonum::merkledb::generic::ErasedAccess;
 use jni::{
     objects::JObject,
     sys::{jbyteArray, jlong, jstring},
@@ -7,7 +7,7 @@ use jni::{
 
 use std::{panic, ptr};
 
-use {
+use crate::{
     handle,
     storage::EjbAccessExt,
     utils::{self, convert_to_string, proto_to_java_bytes},
